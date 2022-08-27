@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import Main from "./pages/Main";
@@ -8,6 +7,8 @@ import LightDetail from "./pages/LightDetail";
 import LightList from "./pages/LightList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import { Reset } from "styled-reset";
+import "./App.css";
 
 function App() {
   const AppDiv = styled.div`
@@ -15,6 +16,7 @@ function App() {
   `;
   return (
     <BrowserRouter>
+      <Reset />
       <div className="app">
         <Link to="/">Main</Link>
         <Link to="/MyPage">MyPage</Link>
