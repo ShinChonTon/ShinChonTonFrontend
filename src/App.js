@@ -19,14 +19,13 @@ function App() {
     <BrowserRouter>
       <Reset />
       <div className="app">
-        <Nav/>
-        <Link to="/">Main</Link>
+        {/* <Link to="/">Main</Link>
         <Link to="/MyPage">MyPage</Link>
         <Link to="/SignUp">SignUp</Link>
         <Link to="/Login">Login</Link>
         <Link to="/LightList">LightList</Link>
         <Link to="/LightDetail:id">LightDetail</Link>
-        <Link to="/LightCreate">LightCreate</Link>
+        <Link to="/LightCreate">LightCreate</Link> */}
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/MyPage" element={<MyPage />}></Route>
