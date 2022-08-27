@@ -1,15 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { CitiesInfo } from "../data/cities";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import logo from "../img/logo_big.png";
 import background from "../img/background.jpeg"
+import { ThemeContext } from "../App";
 
 
 const Main = () => {
   const regions = CitiesInfo();
-  const [userOn, setUserOn] = useState(true);
+
+  const {userOn, setUserOn} = useContext(ThemeContext);
+  
+  // const [userOn, setUserOn] = useState(true);
 
   const [region, setRegion] = useState("서울특별시");
   const [city, setCity] = useState("강남구");

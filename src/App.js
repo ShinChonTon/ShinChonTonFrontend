@@ -9,12 +9,19 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import { Reset } from "styled-reset";
 import "./App.css";
+import {createContext, useContext, useState} from 'react';
+
+export const ThemeContext = createContext();
 
 function App() {
+
+  const [userOn, setUserOn] = useState(false)
+
   const AppDiv = styled.div`
     width: 80%;
   `;
   return (
+    <ThemeContext.Provider value={{userOn, setUserOn}}>
     <BrowserRouter>
       <Reset />
       <div className="app">
@@ -37,6 +44,7 @@ function App() {
         <AppDiv className="App"></AppDiv>
       </div>
     </BrowserRouter>
+    </ThemeContext.Provider>
   );
 }
 

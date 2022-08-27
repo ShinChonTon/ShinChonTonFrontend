@@ -4,10 +4,12 @@ import logo from "../img/logo_big.png";
 import background from "../img/background.jpeg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { createContext, useContext } from 'react';
+import { ThemeContext } from "../App";
 
 const Login = () => {
   const navigate = useNavigate();
+  const {userOn, setUserOn} = useContext(ThemeContext);
 
   const [id, setId] = useState('')
   const [password, setPassword]= useState('')
@@ -19,6 +21,7 @@ const Login = () => {
     })
     .then((response) => {console.log(response)
       navigate('/')
+      setUserOn(true)
     })
   }
 
