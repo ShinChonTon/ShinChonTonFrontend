@@ -31,7 +31,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/LightList" element={<LightList />}></Route>
-          <Route path="/LightDetail/id:" element={<LightDetail />}></Route>
+          <Route path="/LightDetail/:id" element={<LightDetail />}></Route>
           <Route path="/LightCreate" element={<LightCreate />}></Route>
         </Routes>
         <AppDiv className="App"></AppDiv>
