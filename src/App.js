@@ -8,6 +8,7 @@ import LightDetail from "./pages/LightDetail";
 import LightList from "./pages/LightList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Nav from "./Nav";
 
 function App() {
   const AppDiv = styled.div`
@@ -16,6 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
+        <Nav/>
         <Link to="/">Main</Link>
         <Link to="/MyPage">MyPage</Link>
         <Link to="/SignUp">SignUp</Link>
