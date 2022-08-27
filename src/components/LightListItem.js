@@ -1,5 +1,36 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
+const TotalContainer = styled.div`
+  width: 90%;
+  padding: 10px;
+
+  height: 150px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-top: 30px;
+`;
+
+const HashTagContainer = styled.div`
+  border: none;
+  width: 50px;
+  padding: 1px 4px;
+  border-radius: 10px;
+  color: #ff4b33;
+  background-color: #ffc785;
+  margin-top: 3px;
+`;
+
+const MoveDetailBtn = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const Contentscontainer = styled.div`
+  display: flex;
+`;
 
 const LightListItem = ({
   id,
@@ -10,36 +41,10 @@ const LightListItem = ({
   maxPerson,
   currentPerson,
 }) => {
-  const TotalContainer = styled.div`
-    width: 90%;
-    padding: 10px;
-
-    height: 150px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    margin-top: 30px;
-  `;
-
-  const HashTagContainer = styled.div`
-    border: none;
-    width: 50px;
-    padding: 1px 4px;
-    border-radius: 10px;
-    color: #ff4b33;
-    background-color: #ffc785;
-    margin-top: 3px;
-  `;
-
-  const MoveDetailBtn = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  `;
-
-  const Contentscontainer = styled.div`
-    display: flex;
-  `;
-
+  const navigate = useNavigate();
+  const moveToDetail = () => {
+    navigate(`/LightDetail/${id}`);
+  };
   return (
     <TotalContainer>
       <Contentscontainer>
@@ -79,6 +84,7 @@ const LightListItem = ({
       </Contentscontainer>
       <MoveDetailBtn>
         <button
+          onClick={moveToDetail}
           type="button"
           style={{
             width: "70%",
