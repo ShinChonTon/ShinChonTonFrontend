@@ -9,7 +9,7 @@ import background from "../img/background.jpeg"
 
 const Main = () => {
   const regions = CitiesInfo();
-  const [userOn, setUserOn] = useState(false);
+  const [userOn, setUserOn] = useState(true);
 
   const [region, setRegion] = useState("서울특별시");
   const [city, setCity] = useState("강남구");
