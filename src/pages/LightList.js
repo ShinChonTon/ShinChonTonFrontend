@@ -38,7 +38,7 @@ const ItemsLists = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  overflow: auto;
+  overflow: hidden auto;
 `;
 
 const LightList = () => {
