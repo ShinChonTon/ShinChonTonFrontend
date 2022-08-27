@@ -18,22 +18,24 @@ const SignUp = () => {
   const [useableId, setUsableId] = useState(false);
 
   // 아이디 중복 확인 버튼 클릭 -> URL, Response 변경 필
-  const duplicationCheck = () => {
-    axios
-      .post("아이디 중복 확인 URL", {
-        id: id,
-      })
-      .then((response) => {
-        console.log(response);
-        if (response === false) {
-          alert("사용 가능한 아이디입니다.");
-          setUsableId(true);
-        } else {
-          alert("중복된 아이디입니다. 다시 시도하세요.");
-          setId("");
-        }
-      });
-  };
+  // const duplicationCheck = () => {
+  //   // axios
+  //   //   .post("", {
+  //   //     id: id,
+  //   //   })
+  //   //   .then((response) => {
+  //   //     console.log(response);
+  //   //     if (response === false) {
+  //   //       alert("사용 가능한 아이디입니다.");
+  //   //       setUsableId(true);
+  //   //     } else {
+  //   //       alert("중복된 아이디입니다. 다시 시도하세요.");
+  //   //       setId("");
+  //   //     }
+  //   //   });
+  // };
+
+  console.log(id, nickname, password)
 
   // 회원가입 버튼 클릭
   const signUp = () => {
@@ -49,13 +51,13 @@ const SignUp = () => {
       alert("닉네임은 필수항목입니다.");
     } else if (birth === "") {
       alert("생년월일은 필수항목입니다.");
-    } else if (useableId === false) {
-      alert("아이디 중복 확인을 하십시오.");
+    // } else if (useableId === false) {
+    //   alert("아이디 중복 확인을 하십시오.");
     }
     // 회원가입 API -> URL, Response 변경 필
     else {
       axios
-        .post("아이디 중복 확인 URL", {
+        .post("http://127.0.0.1:8000/irion/signup/", {
           id: id,
           password: password,
           nickname: nickname,
