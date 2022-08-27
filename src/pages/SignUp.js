@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import Nav from "../Nav";
+
 
 const SignUp = () => {
 
@@ -79,29 +81,32 @@ const SignUp = () => {
 
   return (
     <div>
-      <div>Logo</div>
-      <div>
-        <div>아이디</div>
-        <input onChange={(e) => {setId(e.target.value)}}/>
-        <button>아이디중복확인</button>
+      <Nav/>
+      <div style={{position: 'fixed', top: '150px', left: '0%', width: '100%', height: '90%', backgroundColor: 'orange'}}>
+        <div>Logo</div>
+        <div>
+          <div>아이디</div>
+          <input onChange={(e) => {setId(e.target.value)}}/>
+          <button>아이디중복확인</button>
+        </div>
+        <div>
+          <div>비밀번호</div>
+          <input onChange={(e) => {setPassword(e.target.value)}}/>
+        </div>
+        <div>
+          <div>비밀번호 확인</div>
+          <input onChange={(e) => {setPasswordToConfirm(e.target.value)}}/>
+        </div>
+        <div>
+          <div>별명</div>
+          <input onChange={(e) => {setNickname(e.target.value)}}/>
+        </div>
+        <div>
+          <div>생일</div>
+          <input onChange={(e) => {setBirth(e.target.value)}}/>
+        </div>
+        <button onClick={signUp}>가입</button>
       </div>
-      <div>
-        <div>비밀번호</div>
-        <input onChange={(e) => {setPassword(e.target.value)}}/>
-      </div>
-      <div>
-        <div>비밀번호 확인</div>
-        <input onChange={(e) => {setPasswordToConfirm(e.target.value)}}/>
-      </div>
-      <div>
-        <div>별명</div>
-        <input onChange={(e) => {setNickname(e.target.value)}}/>
-      </div>
-      <div>
-        <div>생일</div>
-        <input onChange={(e) => {setBirth(e.target.value)}}/>
-      </div>
-      <button onClick={signUp}>가입</button>
     </div>
   )
 };

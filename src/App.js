@@ -10,7 +10,7 @@ import SignUp from "./pages/SignUp";
 import Nav from "./Nav";
 import { Reset } from "styled-reset";
 import "./App.css";
-import Nav from "./Nav";
+// import Nav from "./Nav";
 
 function App() {
   const AppDiv = styled.div`
@@ -20,7 +20,7 @@ function App() {
     <BrowserRouter>
       <Reset />
       <div className="app">
-        <Nav/>
+        {/* <Nav/> */}
         <Link to="/">Main</Link>
         <Link to="/MyPage">MyPage</Link>
         <Link to="/SignUp">SignUp</Link>
