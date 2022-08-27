@@ -4,6 +4,8 @@ import { CitiesInfo } from "../data/cities";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import logo from "../img/logo_big.png";
+import background from "../img/background.jpeg"
+
 
 const Main = () => {
   const regions = CitiesInfo();
@@ -35,10 +37,11 @@ const Main = () => {
       <div
         style={{
           position: "fixed",
-          top: "150px",
+          top: "0px",
           left: "0%",
           width: "100%",
-          height: "90%",
+          height: "100%",
+          backgroundImage: `url(${background})`, backgroundSize: 'cover'
         }}
       >
         <div
@@ -52,13 +55,14 @@ const Main = () => {
           <div
             style={{
               display: "grid",
-              gridTemplateRows: "1fr 3fr",
+              gridTemplateRows: "0.5fr 1fr 0.1fr 3fr",
               width: "100%",
               height: "100%",
               justifyItems: "center",
               alignItems: "center",
             }}
           >
+            <div/>
             <div
               style={{
                 display: "grid",
@@ -70,8 +74,9 @@ const Main = () => {
               }}
             >
               <img src={logo} style={{ width: "400px", height: "300px" }} />
-              <text style={{}}>모든 번개 모임의 중심 이리온</text>
+              <text style={{fontSize: '25px'}}>모든 번개 모임의 중심 이리온</text>
             </div>
+            <div/>
             {userOn ? (
               // user (로그인 O)
               <div
@@ -79,7 +84,7 @@ const Main = () => {
                   width: "100%",
                   height: "100%",
                   display: "grid",
-                  gridTemplateRows: "0.8fr 0.8fr 0.8fr 1fr 0.5fr 1fr 10fr",
+                  gridTemplateRows: "0.9fr 0.9fr 0.9fr 1fr 0.5fr 1fr 10fr",
                 }}
               >
                 <div
@@ -165,7 +170,7 @@ const Main = () => {
                       height: "80%",
                       borderRadius: "20px",
                       border: "none",
-                      fontSize: "30px",
+                      fontSize: "25px",
                     }}
                   >
                     번개 참여하기!
@@ -186,7 +191,7 @@ const Main = () => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <div style={{ textAlign: "center", fontSize: "25px" }}>
+                  <div style={{ textAlign: "center", fontSize: "20px" }}>
                     내가 직접 번개모임을 생성하고 싶다면 ?
                   </div>
                   <div />
@@ -197,7 +202,7 @@ const Main = () => {
                       backgroundColor: "#FD6F22",
                       borderRadius: "20px",
                       border: "none",
-                      fontSize: "30px",
+                      fontSize: "25px",
                     }}
                   >
                     번개 참여하기!
@@ -221,10 +226,11 @@ const Main = () => {
                     alignItems: "center",
                   }}
                 >
+                <Link to="/Login" style={{ textDecoration: "none" }}>
                   <button
                     style={{
                       backgroundColor: "#FF9A50",
-                      width: "417px",
+                      width: "360px",
                       height: "72px",
                       borderRadius: "20px",
                       border: "none",
@@ -233,6 +239,7 @@ const Main = () => {
                   >
                     로그인하기 ⚡
                   </button>
+                </Link>
                 </div>
                 <div>
                   <div style={{ textAlign: "center", fontSize: "15px" }}>

@@ -3,6 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import logo from "../img/logo_big.png";
+import background from "../img/background.jpeg"
+
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -80,60 +83,83 @@ const SignUp = () => {
   return (
     <div>
       <Header />
-      <div
-        style={{
-          position: "fixed",
-          top: "150px",
-          left: "0%",
-          width: "100%",
-          height: "90%",
-          backgroundColor: "orange",
-        }}
-      >
-        <div>Logo</div>
-        <div>
+      <div style={{ position: "fixed", top: "0px", left: "0%", width: "100%", height: "100%", display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
+      <div/>
+      <div style={{display: 'grid', gridTemplateRows: '2fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr'}}>
+        <div/>
+        <div style={{width: "100%", display: 'grid', justifyItems: 'center'}}>
+          <img src={logo} style={{ width: "280px", height: "210px" }} />
+        </div>
+        <div style={{width: "100%", display: 'grid', justifyItems: 'center', flexDirection: 'row', gridTemplateColumns: '1fr 3fr 1fr', alignItems: 'center'}}>
           <div>아이디</div>
           <input
+            style={{ width: "100%", height: "60%", fontSize: "20px", border: '3px solid #FD6F22', borderRadius: '10px'}}
             onChange={(e) => {
               setId(e.target.value);
             }}
           />
-          <button>아이디중복확인</button>
+          <button style={{
+                      width: "100px",
+                      height: "40px",
+                      backgroundColor: "#FFC785",
+                      borderRadius: "10px",
+                      border: "none",
+                      fontSize: "12.5px",
+                    }}>중복확인</button>
         </div>
-        <div>
-          <div>비밀번호</div>
+        <div style={{width: "100%", display: 'grid', justifyItems: 'center', flexDirection: 'row', gridTemplateColumns: '1fr 3fr 1fr', alignItems: 'center'}}>
+          <div>닉네임</div>
           <input
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <div>비밀번호 확인</div>
-          <input
-            onChange={(e) => {
-              setPasswordToConfirm(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <div>별명</div>
-          <input
+            style={{ width: "100%", height: "60%", fontSize: "20px", border: '3px solid #FD6F22', borderRadius: '10px'}}
             onChange={(e) => {
               setNickname(e.target.value);
             }}
           />
+          <div/>
         </div>
-        <div>
+        <div style={{width: "100%", display: 'grid', justifyItems: 'center', flexDirection: 'row', gridTemplateColumns: '1fr 3fr 1fr', alignItems: 'center'}}>
+          <div>비밀번호</div>
+          <input
+            style={{ width: "100%", height: "60%", fontSize: "20px", border: '3px solid #FD6F22', borderRadius: '10px'}}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <div/>
+        </div>
+        <div style={{width: "100%", display: 'grid', justifyItems: 'center', flexDirection: 'row', gridTemplateColumns: '1fr 3fr 1fr', alignItems: 'center'}}>
+          <div>비밀번호 확인</div>
+          <input
+            style={{ width: "100%", height: "60%", fontSize: "20px", border: '3px solid #FD6F22', borderRadius: '10px'}}
+            onChange={(e) => {
+              setPasswordToConfirm(e.target.value);
+            }}
+          />
+          <div/>
+        </div>
+        <div style={{width: "100%", display: 'grid', justifyItems: 'center', flexDirection: 'row', gridTemplateColumns: '1fr 3fr 1fr', alignItems: 'center'}}>
           <div>생일</div>
           <input
+            style={{ width: "100%", height: "60%", fontSize: "20px", border: '3px solid #FD6F22', borderRadius: '10px'}}
             onChange={(e) => {
               setBirth(e.target.value);
             }}
           />
+          <div/>
         </div>
-        <button onClick={signUp}>가입</button>
+        <div style={{width: "100%", display: 'flex', justifyItems: 'center', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+          <button onClick={signUp}  style={{
+                      width: "150px",
+                      height: "50px",
+                      backgroundColor: "#FD6F22",
+                      borderRadius: "10px",
+                      border: "none",
+                      fontSize: "20px",
+                    }}>가입</button>
+        </div>
       </div>
+    </div>
+    <div/>
     </div>
   );
 };
