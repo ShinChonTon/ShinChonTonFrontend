@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import Nav from "./Nav";
 import { Reset } from "styled-reset";
 import "./App.css";
+import Nav from "./Nav";
 
 function App() {
   const AppDiv = styled.div`
