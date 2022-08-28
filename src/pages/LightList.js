@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import LightListItem from "../components/LightListItem";
 import LightListInput from "../components/LightListInput";
+import { useContext } from "react";
+import { AppContainer } from "../App";
 
 const LightListContainer = styled.div`
   width: 100%;
@@ -42,55 +44,8 @@ const ItemsLists = styled.div`
 `;
 
 const LightList = () => {
+  const { lightLists } = useContext(AppContainer);
   const [dummyData, setDummyData] = useState("");
-
-  const lightLists = [
-    {
-      id: 1,
-      title: "꿀잼 방탈출",
-      hashTag: "취미",
-      place: "마포구 유린동",
-      date: new Date().getTime(),
-      maxPerson: 10,
-      currentPerson: 5,
-    },
-    {
-      id: 2,
-      title: "꿀잼 방탈출",
-      hashTag: "취미",
-      place: "마포구 유린동",
-      date: new Date().getTime(),
-      maxPerson: 10,
-      currentPerson: 5,
-    },
-    {
-      id: 3,
-      title: "꿀잼 방탈출",
-      hashTag: "취미",
-      place: "마포구 유린동",
-      date: new Date().getTime(),
-      maxPerson: 10,
-      currentPerson: 5,
-    },
-    {
-      id: 4,
-      title: "꿀잼 방탈출",
-      hashTag: "취미",
-      place: "마포구 유린동",
-      date: new Date().getTime(),
-      maxPerson: 10,
-      currentPerson: 5,
-    },
-    {
-      id: 5,
-      title: "꿀잼 방탈출",
-      hashTag: "취미",
-      place: "마포구 유린동",
-      date: new Date().getTime(),
-      maxPerson: 10,
-      currentPerson: 5,
-    },
-  ];
 
   return (
     <LightListContainer>
