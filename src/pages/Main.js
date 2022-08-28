@@ -10,8 +10,8 @@ import { ThemeContext } from "../App";
 const Main = () => {
   const regions = CitiesInfo();
 
-  const {userOn, setUserOn} = useContext(ThemeContext);
-  
+  const { userOn, setUserOn } = useContext(ThemeContext);
+
   // const [userOn, setUserOn] = useState(true);
 
   const [region, setRegion] = useState("서울특별시");
@@ -168,18 +168,18 @@ const Main = () => {
                   }}
                 >
                   <Link to="/LightList">
-                  <button
-                    style={{
-                      backgroundColor: "#FF9A50",
-                      width: "250px",
-                      height: "80%",
-                      borderRadius: "20px",
-                      border: "none",
-                      fontSize: "25px",
-                    }}
-                  >
-                    번개 참여하기!
-                  </button>
+                    <button
+                      style={{
+                        backgroundColor: "#FF9A50",
+                        width: "250px",
+                        height: "80%",
+                        borderRadius: "20px",
+                        border: "none",
+                        fontSize: "25px",
+                      }}
+                    >
+                      번개 참여하기!
+                    </button>
                   </Link>
                 </div>
                 <div />

@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { AppContainer } from "../App";
 import axios from "axios";
 
-
 const LightListContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -51,8 +50,8 @@ const LightList = () => {
   const [clickOn, setClickOn] = useState(false);
   const [i, setI] = useState(1);
   const handleI = (a) => {
-    setI(a)
-  }
+    setI(a);
+  };
 
   const lightLists = [
     {
@@ -112,33 +111,27 @@ const LightList = () => {
     },
   ];
 
-  const {kakao} = window;
+  const { kakao } = window;
 
   useEffect(() => {
     var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-    mapOption = {
-      center: new kakao.maps.LatLng(lightLists[i  - 1].X, lightLists[i - 1].Y), // 지도의 중심좌표
-      level: 3, // 지도의 확대 레벨
-    };
+      mapOption = {
+        center: new kakao.maps.LatLng(lightLists[i - 1].X, lightLists[i - 1].Y), // 지도의 중심좌표
+        level: 3, // 지도의 확대 레벨
+      };
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-    var markerPosition  = new kakao.maps.LatLng(lightLists[i - 1].X, lightLists[i - 1].Y); 
+    var markerPosition = new kakao.maps.LatLng(
+      lightLists[i - 1].X,
+      lightLists[i - 1].Y
+    );
     var marker = new kakao.maps.Marker({
-      position: markerPosition
+      position: markerPosition,
     });
     marker.setMap(map);
+  }, [i]);
 
-  }, [i])
-
-  useEffect(() => {
-    axios.get('http://127.0.0.1/irion/meetings/')
-    .then((response) => {
-      console.log(response.data)
-    })
-  }, [])
-
-  console.log(i)
-
+  console.log(i);
   return (
     <LightListContainer>
       <LightListaddContainer>
@@ -149,7 +142,7 @@ const LightList = () => {
           <ItemAnotherContainer>
             <ItemsLists>
               {lightLists.map((li) => (
-                <LightListItem {...li} key={li.id}  handleI={handleI}/>
+                <LightListItem {...li} key={li.id} handleI={handleI} />
               ))}
             </ItemsLists>
           </ItemAnotherContainer>
@@ -177,9 +170,15 @@ const LightList = () => {
             </button>
           </div>
         </LightListItems>
-        <div id="map" className="lightList__Map" style={{paddingLeft: '350px', backgroundColor: 'tomato', width: `${window.innerWidth - 350}px`}}>
-
-        </div>
+        <div
+          id="map"
+          className="lightList__Map"
+          style={{
+            paddingLeft: "350px",
+            backgroundColor: "tomato",
+            width: `${window.innerWidth - 350}px`,
+          }}
+        ></div>
       </LightListaddContainer>
     </LightListContainer>
   );
