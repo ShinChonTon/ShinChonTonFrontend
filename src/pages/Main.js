@@ -201,18 +201,20 @@ const Main = () => {
                     내가 직접 번개모임을 생성하고 싶다면 ?
                   </div>
                   <div />
-                  <button
-                    style={{
-                      width: "250px",
-                      height: "80%",
-                      backgroundColor: "#FD6F22",
-                      borderRadius: "20px",
-                      border: "none",
-                      fontSize: "25px",
-                    }}
-                  >
-                    번개 만들기!
-                  </button>
+                  <Link to="/LightCreate">
+                    <button
+                      style={{
+                        width: "250px",
+                        height: "80%",
+                        backgroundColor: "#FD6F22",
+                        borderRadius: "20px",
+                        border: "none",
+                        fontSize: "25px",
+                      }}
+                    >
+                      번개 만들기!
+                    </button>
+                  </Link>
                 </div>
               </div>
             ) : (
