@@ -40,6 +40,8 @@ const LightListItem = ({
   date,
   maxPerson,
   currentPerson,
+
+  handleI
 }) => {
   const navigate = useNavigate();
   const moveToDetail = () => {
@@ -49,7 +51,7 @@ const LightListItem = ({
     <TotalContainer>
       <Contentscontainer>
         <div className="content__container" style={{ width: "50%" }}>
-          <div className="title">
+          <div className="title" onClick={() => {handleI(id)}}>
             <p style={{ fontWeight: "500", fontSize: "19px" }}>{title}</p>
           </div>
           <HashTagContainer>#{hashTag}</HashTagContainer>

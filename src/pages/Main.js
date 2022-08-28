@@ -167,6 +167,7 @@ const Main = () => {
                     alignItems: "center",
                   }}
                 >
+                  <Link to="/LightList">
                   <button
                     style={{
                       backgroundColor: "#FF9A50",
@@ -179,6 +180,7 @@ const Main = () => {
                   >
                     번개 참여하기!
                   </button>
+                  </Link>
                 </div>
                 <div />
                 {/* <div style={{height: 'center', width: 'center', display: 'grid', backgroundColor: 'blue', flexDirection: 'row'}}>
@@ -209,7 +211,7 @@ const Main = () => {
                       fontSize: "25px",
                     }}
                   >
-                    번개 참여하기!
+                    번개 만들기!
                   </button>
                 </div>
               </div>

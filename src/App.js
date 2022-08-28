@@ -15,7 +15,7 @@ export const ThemeContext = createContext();
 
 function App() {
 
-  const [userOn, setUserOn] = useState(false)
+  const [userOn, setUserOn] = useState(true)
 
   const AppDiv = styled.div`
     width: 80%;
