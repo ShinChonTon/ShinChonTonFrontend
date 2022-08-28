@@ -1,14 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { CitiesInfo } from "../data/cities";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import logo from "../img/logo_big.png";
 import background from "../img/background.jpeg";
+import { ThemeContext } from "../App";
 
 const Main = () => {
   const regions = CitiesInfo();
-  const [userOn, setUserOn] = useState(false);
+
+  const { userOn, setUserOn } = useContext(ThemeContext);
+
+  // const [userOn, setUserOn] = useState(true);
 
   const [region, setRegion] = useState("서울특별시");
   const [city, setCity] = useState("강남구");
@@ -163,18 +167,20 @@ const Main = () => {
                     alignItems: "center",
                   }}
                 >
-                  <button
-                    style={{
-                      backgroundColor: "#FF9A50",
-                      width: "250px",
-                      height: "80%",
-                      borderRadius: "20px",
-                      border: "none",
-                      fontSize: "25px",
-                    }}
-                  >
-                    번개 참여하기!
-                  </button>
+                  <Link to="/LightList">
+                    <button
+                      style={{
+                        backgroundColor: "#FF9A50",
+                        width: "250px",
+                        height: "80%",
+                        borderRadius: "20px",
+                        border: "none",
+                        fontSize: "25px",
+                      }}
+                    >
+                      번개 참여하기!
+                    </button>
+                  </Link>
                 </div>
                 <div />
                 {/* <div style={{height: 'center', width: 'center', display: 'grid', backgroundColor: 'blue', flexDirection: 'row'}}>
@@ -205,7 +211,7 @@ const Main = () => {
                       fontSize: "25px",
                     }}
                   >
-                    번개 참여하기!
+                    번개 만들기!
                   </button>
                 </div>
               </div>

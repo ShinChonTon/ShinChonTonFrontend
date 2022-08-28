@@ -10,11 +10,14 @@ import SignUp from "./pages/SignUp";
 import { Reset } from "styled-reset";
 import "./App.css";
 import { createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export const AppContainer = createContext();
 
+export const ThemeContext = createContext();
+
 function App() {
+  const [userOn, setUserOn] = useState(true);
+
   const AppDiv = styled.div`
     width: 80%;
   `;
@@ -74,33 +77,35 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
-      <Reset />
-      <AppContainer.Provider value={{ lightLists, findTargetIdx }}>
-        <div className="app">
-          {/* <Link to="/">Main</Link>
+    <ThemeContext.Provider value={{ userOn, setUserOn }}>
+      <BrowserRouter>
+        <Reset />
+        <AppContainer.Provider value={{ lightLists, findTargetIdx }}>
+          <div className="app">
+            {/* <Link to="/">Main</Link>
         <Link to="/MyPage">MyPage</Link>
         <Link to="/SignUp">SignUp</Link>
         <Link to="/Login">Login</Link>
         <Link to="/LightList">LightList</Link>
         <Link to="/LightDetail:id">LightDetail</Link>
         <Link to="/LightCreate">LightCreate</Link> */}
-          <Routes>
-            <Route path="/" element={<Main />}></Route>
-            <Route path="/MyPage" element={<MyPage />}></Route>
-            <Route path="/SignUp" element={<SignUp />}></Route>
-            <Route path="/Login" element={<Login />}></Route>
-            <Route path="/LightList" element={<LightList />}></Route>
-            <Route
-              path="/LightDetail/:id"
-              element={<LightDetail {...lightLists[target]} />}
-            ></Route>
-            <Route path="/LightCreate" element={<LightCreate />}></Route>
-          </Routes>
-          <AppDiv className="App"></AppDiv>
-        </div>
-      </AppContainer.Provider>
-    </BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Main />}></Route>
+              <Route path="/MyPage" element={<MyPage />}></Route>
+              <Route path="/SignUp" element={<SignUp />}></Route>
+              <Route path="/Login" element={<Login />}></Route>
+              <Route path="/LightList" element={<LightList />}></Route>
+              <Route
+                path="/LightDetail/:id"
+                element={<LightDetail {...lightLists[target]} />}
+              ></Route>
+              <Route path="/LightCreate" element={<LightCreate />}></Route>
+            </Routes>
+            <AppDiv className="App"></AppDiv>
+          </div>
+        </AppContainer.Provider>
+      </BrowserRouter>
+    </ThemeContext.Provider>
   );
 }
 
