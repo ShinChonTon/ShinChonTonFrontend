@@ -11,10 +11,15 @@ import { Reset } from "styled-reset";
 import "./App.css";
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 export const AppContainer = createContext();
 
+export const ThemeContext = createContext();
+
+
 function App() {
+
+  const [userOn, setUserOn] = useState(true)
+
   const AppDiv = styled.div`
     width: 80%;
   `;
@@ -74,6 +79,7 @@ function App() {
   ];
 
   return (
+    <ThemeContext.Provider value={{userOn, setUserOn}}>
     <BrowserRouter>
       <Reset />
       <AppContainer.Provider value={{ lightLists, findTargetIdx }}>
@@ -101,6 +107,7 @@ function App() {
         </div>
       </AppContainer.Provider>
     </BrowserRouter>
+    </ThemeContext.Provider>
   );
 }
 
