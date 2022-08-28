@@ -10,7 +10,6 @@ import SignUp from "./pages/SignUp";
 import { Reset } from "styled-reset";
 import "./App.css";
 import { createContext, useState } from "react";
-
 export const AppContainer = createContext();
 
 export const ThemeContext = createContext();

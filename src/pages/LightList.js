@@ -46,7 +46,6 @@ const ItemsLists = styled.div`
 `;
 
 const LightList = () => {
-  // const { lightLists } = useContext(AppContainer);
   const [dummyData, setDummyData] = useState("");
   const [clickOn, setClickOn] = useState(false);
   const [i, setI] = useState(1);
@@ -133,7 +132,6 @@ const LightList = () => {
   }, [i]);
 
   console.log(i);
-
   return (
     <LightListContainer>
       <LightListaddContainer>
