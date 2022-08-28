@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AppContainer } from "../App";
 
 const TotalContainer = styled.div`
   width: 90%;
@@ -44,9 +46,12 @@ const LightListItem = ({
   handleI
 }) => {
   const navigate = useNavigate();
+  const { findTargetIdx } = useContext(AppContainer);
   const moveToDetail = () => {
+    findTargetIdx(id);
     navigate(`/LightDetail/${id}`);
   };
+
   return (
     <TotalContainer>
       <Contentscontainer>

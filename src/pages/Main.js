@@ -4,9 +4,8 @@ import { CitiesInfo } from "../data/cities";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import logo from "../img/logo_big.png";
-import background from "../img/background.jpeg"
+import background from "../img/background.jpeg";
 import { ThemeContext } from "../App";
-
 
 const Main = () => {
   const regions = CitiesInfo();
@@ -45,7 +44,8 @@ const Main = () => {
           left: "0%",
           width: "100%",
           height: "100%",
-          backgroundImage: `url(${background})`, backgroundSize: 'cover'
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
         }}
       >
         <div
@@ -66,7 +66,7 @@ const Main = () => {
               alignItems: "center",
             }}
           >
-            <div/>
+            <div />
             <div
               style={{
                 display: "grid",
@@ -78,9 +78,9 @@ const Main = () => {
               }}
             >
               <img src={logo} style={{ width: "400px", height: "300px" }} />
-              <text style={{fontSize: '25px'}}>모든 번개 모임의 중심 이리온</text>
+              <p style={{ fontSize: "25px" }}>모든 번개 모임의 중심 이리온</p>
             </div>
-            <div/>
+            <div />
             {userOn ? (
               // user (로그인 O)
               <div
@@ -232,20 +232,20 @@ const Main = () => {
                     alignItems: "center",
                   }}
                 >
-                <Link to="/Login" style={{ textDecoration: "none" }}>
-                  <button
-                    style={{
-                      backgroundColor: "#FF9A50",
-                      width: "360px",
-                      height: "72px",
-                      borderRadius: "20px",
-                      border: "none",
-                      fontSize: "30px",
-                    }}
-                  >
-                    로그인하기 ⚡
-                  </button>
-                </Link>
+                  <Link to="/Login" style={{ textDecoration: "none" }}>
+                    <button
+                      style={{
+                        backgroundColor: "#FF9A50",
+                        width: "360px",
+                        height: "72px",
+                        borderRadius: "20px",
+                        border: "none",
+                        fontSize: "30px",
+                      }}
+                    >
+                      로그인하기 ⚡
+                    </button>
+                  </Link>
                 </div>
                 <div>
                   <div style={{ textAlign: "center", fontSize: "15px" }}>

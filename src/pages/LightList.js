@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import LightListItem from "../components/LightListItem";
 import LightListInput from "../components/LightListInput";
+import { useContext } from "react";
+import { AppContainer } from "../App";
 import axios from "axios";
+
 
 const LightListContainer = styled.div`
   width: 100%;

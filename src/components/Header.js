@@ -7,15 +7,15 @@ const Header = () => {
   return (
     <div
       style={{
-        position: 'fixed',
+        position: "fixed",
         width: "100%",
         height: "150px",
         display: "flex",
         justifyContent: "space-between",
         padding: "20px 50px",
         alignItems: "center",
-        backgroundColor: 'rgba( 255, 255, 255, 0.0 )',
-        zIndex: '3'
+        backgroundColor: "rgba( 255, 255, 255, 0.0 )",
+        zIndex: "3",
       }}
     >
       <Link to="/">
